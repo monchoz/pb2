@@ -4,25 +4,30 @@ $grayLight = #777777
 $link = #3498db
 $pb = #B0D887
 $pbSolid = #8CC74B
+$coolBlack = #2d2d2c
 
 body
   background-color #F7FAFA
   font-family "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size 14px
-  padding 20px
 
 ul
   list-style none
   padding-left 0
 
+.container
+  padding 15px
+
 .divider
   color $pb
+  padding 15px
 
 .flat-button
   background $pbSolid
   border none
   color #FFF
   height 40px
+  margin-top 20px
   width 180px
 
   &:hover
@@ -33,6 +38,9 @@ ul
 .like
   height 34px !important
   width 34px !important
+
+  &:hover
+    cursor pointer
 
 .pb-logo
   height 50px
@@ -75,7 +83,7 @@ ul
     &-detail
       width 65%
       padding 0 10px
-      margin-bottom 20px
+      margin-bottom 5px
 
       &_title
         font-size 1.2em
@@ -104,5 +112,23 @@ ul
       &_progress
         margin 10px 0
 
+  &-invest
+    margin 5px 0
+    font-size 1.2em
+
+    p
+      color $coolBlack
+      font-weight "BrandonGrotesque",Helvetica,Arial,sans-serif !important
+
+    &_money
+      border-color #f5c96c
+      border-top white
+      border-right white
+      border-left white
+      color #2d2d2c
+      box-decoration-break none
+      outline-color white
+
 .w3-green
   background-color $pbSolid !important
+  color $coolBlack !important
