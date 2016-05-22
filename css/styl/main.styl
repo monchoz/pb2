@@ -1,0 +1,108 @@
+
+$gray = #95a5a6
+$grayLight = #777777
+$link = #3498db
+$pb = #B0D887
+$pbSolid = #8CC74B
+
+body
+  background-color #F7FAFA
+  font-family "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size 14px
+  padding 20px
+
+ul
+  list-style none
+  padding-left 0
+
+.divider
+  color $pb
+
+.flat-button
+  background $pbSolid
+  border none
+  color #FFF
+  height 40px
+  width 180px
+
+  &:hover
+    background none
+    border 1px solid $pb
+    color $pbSolid
+
+.like
+  height 34px !important
+  width 34px !important
+
+.pb-logo
+  height 50px
+  margin 20% 0 0 40%
+  width 45px
+  position absolute
+  top 0
+  left 0
+
+.project
+  background-color #FFF
+  box-shadow: -0.5px 2px 1px $pb;
+  margin-bottom 20px
+  padding 1px 15px 15px 15px
+
+  &-content
+    display flex
+    flex-flow row
+
+    &-header
+      position relative
+      text-align center
+      width 35%
+
+      &_logo
+        width 100%
+
+      &:hover
+        cursor pointer
+
+        .project-content-header_logo
+          opacity 0.6
+
+      @media screen and (max-width: 540px)
+        width 100%
+
+    @media screen and (max-width: 540px)
+      flex-flow column
+
+    &-detail
+      width 65%
+      padding 0 10px
+      margin-bottom 20px
+
+      &_title
+        font-size 1.2em
+
+      &_description
+        color $grayLight
+        margin 0
+
+      &_badge
+        display inline-block
+        margin-right 20px
+        text-align center
+
+        img
+          height 24px
+          width 24px
+
+        .followers
+          color $grayLight
+          font-size 1.2em
+
+      @media screen and (max-width: 540px)
+        padding 0px
+        width 100%
+
+      &_progress
+        margin 10px 0
+
+.w3-green
+  background-color $pbSolid !important
