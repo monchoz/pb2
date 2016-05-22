@@ -43,7 +43,6 @@ angular.module('pbApp', [])
         totalInvest: '',
         following: false
       }
-
     ];
 
     $scope.toggleInvest = function(project) {
@@ -62,8 +61,44 @@ angular.module('pbApp', [])
     };
 
     $scope.like = function(project) {
-      console.log("hola");
       project.following = !project.following;
     }
 
+  })
+
+  .controller('ProjectCompleteListCtrl', function($scope, $sce) {
+    $scope.projectsComplete = [
+      {
+        id: 1,
+        name: 'Zago',
+        logoUrl: 'https://playbusiness.mx/system/campaigns/cover_images/000/000/886/medium/LOGO.png',
+        videoUrl: $sce.trustAsResourceUrl('https://www.youtube.com/embed/BiU47IIseh0'),
+        description: 'En ZAGO podras COTIZAR los precios, menús completos y obtendras BENEFICIOS EXCLUSIVOS en los restaurantes de tu ciudad. ¡No mas imprevistos!',
+        totalCollected: 223400,
+        daysLeft: 0,
+        percShare: 7,
+        bizValuation: 223400,
+        followers: 14,
+        progress: 100,
+        following: false
+      },
+      {
+        id: 2,
+        name: 'Play business 2.0',
+        logoUrl: 'https://playbusiness.mx/system/campaigns/cover_images/000/001/023/medium/logo_780x440sceen-01.jpg',
+        videoUrl: $sce.trustAsResourceUrl('https://www.youtube.com/embed/dTZBjXpBHMA'),
+        description: 'La primera plataforma de equity crowdfunding en México donde cualquier persona puede invertir desde $100 en las Startups más "hot" de México',
+        totalCollected: 5796600,
+        daysLeft: 0,
+        percShare: 6,
+        bizValuation: 5796600,
+        followers: 66,
+        progress: 100,
+        following: true
+      }
+    ];
+
+    $scope.like = function(project) {
+      project.following = !project.following;
+    }
   });

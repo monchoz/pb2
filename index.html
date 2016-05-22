@@ -25,8 +25,8 @@
       <h2>Descubre Proyectos</h2>
       <hr>
     </section>
-    <section class='container' ng-controller= "ProjectListCtrl">
-      <ul>
+    <section class='container'>
+      <ul ng-controller= "ProjectListCtrl">
         <li ng-repeat="project in projects" ng-init="playVideo = 0">
           <div class="project">
             <div class="project-content">
@@ -73,7 +73,52 @@
             </div>
             <button ng-click='toggleInvest(project)' class='flat-button' type="button" name="button">INVERTIR ${{ project.totalInvest ? (project.totalInvest | number:2) : '' }}</button>
           </div>
-
+        </li>
+      </ul>
+      <section class='divider'>
+        <h2>Casos de éxito...Espera una 2da ronda</h2>
+        <hr>
+      </section>
+      <ul ng-controller= "ProjectCompleteListCtrl">
+        <li ng-repeat="project in projectsComplete" ng-init="playVideo = 0">
+          <div class="project">
+            <div class="project-content">
+              <div ng-click='playVideo = 1' class='project-content-header' title='Ver Video'>
+                <img ng-show='playVideo == 0' class='project-content-header_logo' src="{{ project.logoUrl }}" alt="{{ project.name }}" />
+                <img ng-show='playVideo == 0' class='pb-logo' src="https://playbusiness.mx/assets/hexagono3-00f00ad82cbf4e65effd993fb72fec9c.png" alt="Ver video" />
+                <iframe width="100%" height="193" ng-show="playVideo == 1" ng-src="{{ project.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="project-content-detail">
+                <h3 class='project-content-detail_title'>{{ project.name }} <img ng-click="like(project)" class='like' src="{{ project.following ? 'https://playbusiness.mx/like-on.png' : 'https://playbusiness.mx/like.png' }}" alt="Like" /></h3>
+                <p class='project-content-detail_description'>
+                  {{ project.description }}
+                </p>
+                <img class='fondeado-img' src="https://playbusiness.mx/assets/fondeado-1a5b7f0b2db2a367b227bde3016a966f.png" alt="" />
+                <div class="project-content-detail_progress">
+                  <div class="w3-progress-container">
+                    <div id="myBar" class="w3-progressbar w3-yellow" style="width:{{project.progress}}%">
+                      <div id="demo" class="w3-center">${{ project.totalCollected | number }}</div>
+                    </div>
+                  </div>
+                  <p>quedan <strong>{{ project.daysLeft }}</strong> dias</p>
+                </div>
+                <div>
+                  <div class='project-content-detail_badge'>
+                    <img src="https://playbusiness.mx/assets/porcentaje-2be100d1c8f045eda24baa5c2dab6a15.png" alt="Porcentaje a cambio" />
+                    <strong>{{ project.percShare }}%</strong>
+                  </div>
+                  <div class='project-content-detail_badge'>
+                    <img src="https://playbusiness.mx/assets/dinero-4ef07c8de8dedf06b86a43ed0c459290.png" alt="Monto recaudado" />
+                    <strong>${{ project.bizValuation | number }}</strong>
+                  </div>
+                  <div class='project-content-detail_badge'>
+                    <strong class='followers'>{{ project.followers }}</strong>
+                    <label>Seguidores</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </section>
